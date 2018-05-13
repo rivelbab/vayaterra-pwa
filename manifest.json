@@ -1,0 +1,35 @@
+{
+    "short_name": "Vayaterra",
+    "name": "Vayaterra",
+    "icons": [ {
+        "src": "img/touch/icon-128x128.webp",
+        "type": "image/webp",
+        "sizes": "128x128"
+    }, {
+        "src": "img/touch/ms-touch-icon-144x144-precomposed.webp",
+        "type": "image/webp",
+        "sizes": "144x144"
+    }, {
+        "src": "img/touch/apple-touch-icon.webp",
+        "type": "image/webp",
+        "sizes": "152x152"
+    }, {
+        "src": "img/touch/chrome-touch-icon-192x192.webp",
+        "type": "image/webp",
+        "sizes": "192x192"
+    }, {
+        "src": "img/touch/chrome-touch-icon-512x512.webp",
+        "type": "image/webp",
+        "sizes": "512x512"
+    } ],
+    "start_url": "/?utm_source=homescreen",
+    "background_color": "#2196F3",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#2196F3",
+    "prefer_related_applications": true,
+    "related_applications": [ {
+        "platform": "play",
+        "id": "com.google.samples.apps.iosched"
+    } ]
+}
