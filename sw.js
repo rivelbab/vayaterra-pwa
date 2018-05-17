@@ -6,7 +6,8 @@ self.addEventListener( 'install', function ( event ) {
         'css/style.min.css',
         'js/material.min.js',
         'index.html',
-        'home.html'
+        'home.html',
+        'projet.html'
     ];
     event.waitUntil(
         caches.open( CACHE_NAME )
