@@ -1,7 +1,7 @@
 <!--
-    Projet Vayaterra / Licence pro DWM
-    version pwa by rivel, nassim, jordan
-    Paris 8 2017-2018
+Projet Vayaterra / Licence pro DWM
+version pwa by rivel, nassim, jordan
+Paris 8 2017-2018
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,77 +9,47 @@
 <head>
     <meta charset="utf-8">
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-    <title>Vayaterra: Contact</title>
+    <title>Contact</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
-    <meta name="theme-color" content="#26a69a">
+    <meta name="theme-color" content="#24292e">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="description" content="Vayaterra pwa">
+    <meta name="author" content="Rivel babindamana">
 
-    <!-- Add Material font (Roboto) and Material icon as needed -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- material css -->
-    <link href="css/material.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
-
-    <link rel="icon" href="icon.webp">
-    <link rel="apple-touch-icon" href="ios-icon.webp">
-    <link rel="apple-touch-startup-image" href="icon.webp">
     <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="ios-icon.png">
+    <link rel="apple-touch-startup-image" href="icon.png">
     <link rel="manifest" href="manifest.json" />
-
-    <!-- blocking css -->
-    <style media="screen">
-        .menu-btn{
-            background-color: transparent;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-        }
-        .menu-btn:hover{
-            cursor: pointer;
-        }
-        .menu-btn:active{
-            border: none;
-            box-shadow: none;
-        }
-        .menu-btn:focus{
-            border: none;
-            box-shadow: none;
-        }
-        .navbar-search{
-            background-color: transparent;
-            border: none;
-            margin: 0 auto;
-            color: #fff;
-        }
-        .navbar-search:hover{
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-secondary">
         <button data-target="#myNavdrawer" data-toggle="navdrawer" type="button" class="menu-btn"> <i class="material-icons">subject</i> </button>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <a class="navbar-search"> &nbsp;&nbsp; <i class="material-icons">search</i> </a>
-        </form>
-        <a class="menu-btn"><i class="material-icons">more_vert</i> </a>
+        <a href="contact.html" class="menu-btn"><i class="material-icons">email</i></a>
+        <div class="dropleft">
+            <button type="button" class="menu-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">translate</i>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Français</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Anglais</a>
+                <a class="dropdown-item" href="#">Chinois</a>
+                <a class="dropdown-item" href="#">Espagnole</a>
+            </div>
+        </div>
     </nav>
     <div aria-hidden="true" class="navdrawer" id="myNavdrawer" tabindex="-1">
         <div class="navdrawer-content">
             <div class="navdrawer-header">
-                <a class="navbar-brand px-0 text-white" href="home.html"><i class="material-icons">keyboard_arrow_left</i> Menu</a>
+                <a class="navbar-brand px-0 text-white" href="actu.html"><i class="material-icons">close</i></a>
             </div>
             <ul class="navdrawer-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.html"><i class="material-icons mr-3">home</i> Accueil</a>
+                    <a class="nav-link" href="actu.html"><i class="material-icons mr-3">home</i> Actualité</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="projet.html"><i class="material-icons mr-3">folder</i> Projet</a>
@@ -106,36 +76,230 @@
                     <a class="nav-link" href="parametre.html"><i class="material-icons mr-3">settings</i> Parametres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html"><i class="fa fa-sign-out mr-3"></i> Deconnexion</a>
+                    <a class="nav-link" href="index.html"><i class="material-icons mr-3">exit_to_app</i> Deconnexion</a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="page-wrap">
-        <div class="container">
-            <h1>contact page</h1>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Messages récents</h4>
+                <hr>
+                <div class="message-box">
+                    <div class="message-widget">
+                        <a href="#" onclick="showMsg('#reponse','1')">
+                            <div class="user-img">
+                                <img src="img/2.jpg" alt="user" class="img-circle img-fluid">
+                                <span class="profile-status online pull-right"></span>
+                            </div>
+                            <div class="mail-contnet">
+                                <h5>Vanessa Inoubi</h5>
+                                <span class="mail-desc">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</span>
+                                <span class="time">9:30 AM</span>
+                            </div>
+                        </a>
+                        <!-- ============= start reponse ============-->
+                        <div class="card-reponse d-none" id="reponse1">
+                            <div class="chat-box">
+                                <ul class="chat-list">
+                                    <li>
+                                        <div class="chat-img">
+                                            <img src="img/2.jpg" alt="user" class="img-fluid" />
+                                        </div>
+                                        <div class="chat-content">
+                                            <h5>Vanessa Inoubi</h5>
+                                            <div class="box bg-light-info">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</div>
+                                        </div>
+                                        <div class="chat-time">10:30 am</div>
+                                    </li>
+                                    <li class="odd">
+                                        <div class="chat-content">
+                                            <div class="box bg-light-success">Salut oui biensur, êtes vous intéressé ?</div>
+                                            <br/>
+                                        </div>
+                                        <div class="chat-time">10:58 am</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="b-t">
+                                <form action="contact.html">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <textarea placeholder="Votre message" class="form-control send-msg"></textarea>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-float btn-secondary my-1"><i class="material-icons">send</i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr>
+                        </div>
+                        <!--================== end reponse ============= -->
+                        <a href="#" onclick="showMsg('#reponse','2')">
+                            <div class="user-img">
+                                <img src="img/1.jpg" alt="user" class="img-circle img-fluid">
+                                <span class="profile-status online pull-right"></span>
+                            </div>
+                            <div class="mail-contnet">
+                                <h5>Rivel Babin</h5>
+                                <span class="mail-desc">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</span>
+                                <span class="time">10:30 AM</span>
+                            </div>
+                        </a>
+                        <!-- ============= start reponse ============-->
+                        <div class="card-reponse d-none" id="reponse2">
+                            <div class="chat-box">
+                                <ul class="chat-list">
+                                    <li>
+                                        <div class="chat-img">
+                                            <img src="img/1.jpg" alt="user" class="img-fluid" />
+                                        </div>
+                                        <div class="chat-content">
+                                            <h5>Rivel Babin</h5>
+                                            <div class="box bg-light-info">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</div>
+                                        </div>
+                                        <div class="chat-time">10:30 am</div>
+                                    </li>
+                                    <li class="odd">
+                                        <div class="chat-content">
+                                            <div class="box bg-light-success">Salut oui biensur, êtes vous intéressé ?</div>
+                                            <br/>
+                                        </div>
+                                        <div class="chat-time">10:58 am</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="b-t">
+                                <form action="contact.html">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <textarea placeholder="Votre message" class="form-control send-msg"></textarea>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-float btn-secondary my-1"><i class="material-icons">send</i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr>
+                        </div>
+                        <!--================== end reponse ============= -->
+                        <a href="#" onclick="showMsg('#reponse','3')">
+                            <div class="user-img">
+                                <img src="img/5.jpg" alt="user" class="img-circle img-fluid">
+                                <span class="profile-status online pull-right"></span>
+                            </div>
+                            <div class="mail-contnet">
+                                <h5>Jordan Nassim</h5>
+                                <span class="mail-desc">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</span>
+                                <span class="time">9:30 AM</span>
+                            </div>
+                        </a>
+                        <!-- ============= start reponse ============-->
+                        <div class="card-reponse d-none" id="reponse3">
+                            <div class="chat-box">
+                                <ul class="chat-list">
+                                    <li>
+                                        <div class="chat-img">
+                                            <img src="img/5.jpg" alt="user" class="img-fluid" />
+                                        </div>
+                                        <div class="chat-content">
+                                            <h5>Jordan Nassim</h5>
+                                            <div class="box bg-light-info">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</div>
+                                        </div>
+                                        <div class="chat-time">10:30 am</div>
+                                    </li>
+                                    <li class="odd">
+                                        <div class="chat-content">
+                                            <div class="box bg-light-success">Salut oui biensur, êtes vous intéressé ?</div>
+                                            <br/>
+                                        </div>
+                                        <div class="chat-time">10:58 am</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="b-t">
+                                <form action="contact.html">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <textarea placeholder="Votre message" class="form-control send-msg"></textarea>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-float btn-secondary my-1"><i class="material-icons">send</i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr>
+                        </div>
+                        <!--================== end reponse ============= -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <noscript id="deferred-styles">
+        <!-- Add Material font (Roboto) and Material icon as needed -->
+        <link href="css/google-font.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/material-icon.css" rel="stylesheet" media="all" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all" type="text/css">
+        <!-- material css -->
+        <link href="css/material.min.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/style.min.css" rel="stylesheet" media="all" type="text/css">
+    </noscript>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-    <!-- Then Material JavaScript -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+    //=============== deferring css ================
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() {
+        window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+    //=============== add service woker ===============
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
             });
-        }
+        });
+    }
+    //============= for instalation ==============
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.prompt();
+        deferredPrompt = e;
+    });
+    window.addEventListener('appinstalled', (evt) => {
+        app.logEvent('a2hs', 'installed');
+    });
+    //============== custom script =============
+    function showMsg(nom, num){
+        var msg = nom+num;
+        var row = $(msg);
+        row.toggleClass("d-none");
+    }
     </script>
 </body>
 

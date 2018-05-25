@@ -6,8 +6,7 @@ self.addEventListener( 'install', function ( event ) {
         'css/style.min.css',
         'js/material.min.js',
         'index.html',
-        'home.html',
-        'projet.html'
+        'home.html'
     ];
     event.waitUntil(
         caches.open( CACHE_NAME )
@@ -17,6 +16,9 @@ self.addEventListener( 'install', function ( event ) {
         } )
     );
 } );
+self.addEventListener('activate', event => {
+  console.log('V1 now ready to handle fetches!');
+});
 self.addEventListener( 'fetch', function ( event ) {
     event.respondWith(
         caches.match( event.request )

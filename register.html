@@ -5,11 +5,10 @@
 -->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-    <title>Login</title>
+    <title>Inscription</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -36,6 +35,14 @@
                         <form action="home.html">
                             <div class="form-group">
                                 <div class="input-group login-form">
+                                    <input aria-describedby="Email" aria-label="Email" class="form-control" id="email" placeholder="Email" type="email">
+                                    <span class="input-group-icon" id="email">
+                                        <i class="material-icons">email</i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group login-form">
                                     <input aria-describedby="Login" aria-label="Login" class="form-control" id="login" placeholder="Login" type="text">
                                     <span class="input-group-icon" id="login2">
                                         <i class="material-icons">account_circle</i>
@@ -50,9 +57,15 @@
                                     </span>
                                 </div>
                             </div>
-                            <span><a href="home.html">Mot de passe oublié ?</a></span>
-                            <br>
-                            <button class="btn btn-light my-1 login-btn" type="submit" name="action"> Se connecter
+                            <div class="form-group">
+                                <div class="input-group login-form">
+                                    <input aria-describedby="Passwork" aria-label="Password" class="form-control" id="pwd2" placeholder="Confirmation mot de passe" type="password">
+                                    <span class="input-group-icon" id="pwd2">
+                                        <i class="material-icons">lock</i>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="btn btn-light my-1 login-btn" type="submit" name="action"> S'inscrire
         						<i class="material-icons right">send</i>
         					</button>
                             <div class="social-media">
@@ -62,7 +75,7 @@
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
-                            <span class="text-center text-white-secondary">Vous êtes nouveau ? <a class="inscription" href="register.html">Inscription</a></span>
+                            <span class="text-center text-white-secondary">Déjà inscrit(e) ? <a class="inscription" href="index.html">Connexion</a></span>
                         </form>
                     </div>
                 </div>

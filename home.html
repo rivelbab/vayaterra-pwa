@@ -1,7 +1,7 @@
 <!--
-    Projet Vayaterra / Licence pro DWM
-    version pwa by rivel, nassim, jordan
-    Paris 8 2017-2018
+Projet Vayaterra / Licence pro DWM
+version pwa by rivel, nassim, jordan
+Paris 8 2017-2018
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,76 +9,47 @@
 <head>
     <meta charset="utf-8">
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-    <title>Vayaterra: Accueil</title>
+    <title>Accueil</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
-    <meta name="theme-color" content="#26a69a">
+    <meta name="theme-color" content="#24292e">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="description" content="Vayaterra pwa">
+    <meta name="author" content="Rivel babindamana">
 
-    <!-- Add Material font (Roboto) and Material icon as needed -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- material css -->
-    <link href="css/material.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
-
-    <link rel="icon" href="icon.webp">
-    <link rel="apple-touch-icon" href="ios-icon.webp">
-    <link rel="apple-touch-startup-image" href="icon.webp">
     <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="ios-icon.png">
+    <link rel="apple-touch-startup-image" href="icon.png">
     <link rel="manifest" href="manifest.json" />
-    <!-- blocking css -->
-    <style media="screen">
-        .menu-btn{
-            background-color: transparent;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-        }
-        .menu-btn:hover{
-            cursor: pointer;
-        }
-        .menu-btn:active{
-            border: none;
-            box-shadow: none;
-        }
-        .menu-btn:focus{
-            border: none;
-            box-shadow: none;
-        }
-        .navbar-search{
-            background-color: transparent;
-            border: none;
-            margin: 0 auto;
-            color: #fff;
-        }
-        .navbar-search:hover{
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-secondary">
         <button data-target="#myNavdrawer" data-toggle="navdrawer" type="button" class="menu-btn"> <i class="material-icons">subject</i> </button>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <a class="navbar-search"> &nbsp;&nbsp; <i class="material-icons">search</i> </a>
-        </form>
-        <a class="menu-btn"><i class="material-icons">more_vert</i> </a>
+        <a href="contact.html" class="menu-btn"><i class="material-icons">email</i></a>
+        <div class="dropleft">
+            <button type="button" class="menu-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">translate</i>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Français</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Anglais</a>
+                <a class="dropdown-item" href="#">Chinois</a>
+                <a class="dropdown-item" href="#">Espagnole</a>
+            </div>
+        </div>
     </nav>
     <div aria-hidden="true" class="navdrawer" id="myNavdrawer" tabindex="-1">
         <div class="navdrawer-content">
             <div class="navdrawer-header">
-                <a class="navbar-brand px-0 text-white" href="home.html"><i class="material-icons">keyboard_arrow_left</i> Menu</a>
+                <a class="navbar-brand px-0 text-white" href="actu.html"><i class="material-icons">close</i></a>
             </div>
             <ul class="navdrawer-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.html"><i class="material-icons mr-3">home</i> Accueil</a>
+                    <a class="nav-link" href="actu.html"><i class="material-icons mr-3">home</i> Actualité</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="projet.html"><i class="material-icons mr-3">folder</i> Projet</a>
@@ -111,31 +82,100 @@
         </div>
     </div>
     <div class="page-wrap">
-        <div class="page-content">
-            <img src="img/logob.webp" alt="Vayaterra" class="img-responsive">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="logo-accueil">
+                        <img src="img/logob.png" alt="Logo vayaterra" class="img-fluid">
+                    </div>
+                    <div class="text-center">
+                        <h4>Bienvenue sur Vayaterra</h4>
+                        <p class="text-warning">Veillez compléter votre profil</p>
+                        <hr>
+                    </div>
+                    <div class="profil-home">
+                        <form action="profil.html">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="inputState">Qui êtes vous ?</label>
+                                    <select id="lieu" class="form-control">
+                                        <option selected>Choisir...</option>
+                                        <option>Membre ordinaire</option>
+                                        <option>Porteur de projet</option>
+                                        <option>Reporteur</option>
+                                        <option>Voyageur</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" id="keyword" placeholder="Tag (ex: palmier, écologie...)">
+                                </div>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Photo de profil</label>
+                            </div>
+                            <div class="form-group text-center">
+                                <br>
+                                <button type="submit" class="btn btn-projet">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h1 class="text-white">Bienvenue sur Vayaterra</h1>
     </div>
-
+    <noscript id="deferred-styles">
+        <!-- Add Material font (Roboto) and Material icon as needed -->
+        <link href="css/google-font.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/material-icon.css" rel="stylesheet" media="all" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all" type="text/css">
+        <!-- material css -->
+        <link href="css/material.min.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/style.min.css" rel="stylesheet" media="all" type="text/css">
+    </noscript>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-    <!-- Then Material JavaScript -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+    //=============== deferring css ================
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() {
+        window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+    //=============== add service woker ===============
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
             });
-        }
+        });
+    }
+    //============= for instalation ==============
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.prompt();
+        deferredPrompt = e;
+    });
+    window.addEventListener('appinstalled', (evt) => {
+        app.logEvent('a2hs', 'installed');
+    });
     </script>
 </body>
 

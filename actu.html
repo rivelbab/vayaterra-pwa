@@ -1,7 +1,7 @@
 <!--
-    Projet Vayaterra / Licence pro DWM
-    version pwa by rivel, nassim, jordan
-    Paris 8 2017-2018
+Projet Vayaterra / Licence pro DWM
+version pwa by rivel, nassim, jordan
+Paris 8 2017-2018
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-    <title>Web-docs</title>
+    <title>Actualité</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -82,27 +82,64 @@
         </div>
     </div>
     <div class="container">
-        <br>
-        <div class="card-deck">
-            <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lsIAL_QdTi0?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Nassim, aujourd'hui</small>
-                    <div class="pull-right">
-                        <a href="#" class="card-link"> <i class="material-icons">thumb_up</i> </a>
-                        <button class="card-link btn-card-link" onclick="showMsg('#commentp', '1')"> <i class="material-icons">comment</i></button>
-                    </div>
-                    <hr>
-                    <form class="d-none" action="#" method="post" id="commentp1">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Votre commentaire">
-                            <div class="input-group-append">
-                                <button class="btn-card-link" type="submit"><i class="material-icons right">send</i> </button>
+        <div class="text-center">
+            <h4>Actualité</h4>
+            <hr>
+        </div>
+        <div class="profiletimeline">
+            <div class="sl-item">
+                <div class="sl-left"><img src="img/5.jpg" alt="user" class="img-circle img-fluid"> </div>
+                <div class="sl-right">
+                    <div>
+                        <a href="profil.html" class="link">Jordan Regnier</a>
+                        <span class="sl-date"> Il y a 5 min</span>
+                        <div class="m-t-20 row">
+                            <div class="col-md-3 col-xs-12">
+                                <img src="img/02.jpg" alt="user" class="img-fluid">
+                            </div>
+                            <div class="col-md-9 col-xs-12 m-t-5">
+                                <p> Nous contribuons au nétoyage de la planette en ramassant les déchets qui poluent.</p>
+                                <hr style="width:50%;border-color:#26a69a;">
                             </div>
                         </div>
-                    </form>
+                        <div class="text-center">
+                            <button type="button" class="menu-btn text-black-50"><i class="fa fa-user-plus text-secondary"></i> 25</button>
+                            <button type="button" class="menu-btn text-black-50"><i class="fa fa-heart text-danger"></i> 60 </button>
+                            <button type="button" class="menu-btn text-black-50"><i class="fa fa-share text-secondary"></i> 17 </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="sl-item">
+                <div class="sl-left"><img src="img/2.jpg" alt="user" class="img-circle img-fluid"> </div>
+                <div class="sl-right">
+                    <div>
+                        <a href="profil.html" class="link">Vanessa Inoubi</a>
+                        <span class="sl-date"> Il y a 15 min</span>
+                        <div class="m-t-20">
+                            <p> Je cherche des reporteurs dont le but de tourner un webdoc en Amazonie.</p>
+                            <hr style="width:50%;border-color:#26a69a;">
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="menu-btn text-black-50"><i class="fa fa-user-plus text-secondary"></i> 10</button>
+                            <button type="button" class="menu-btn text-black-50"><i class="fa fa-heart text-danger"></i> 65 </button>
+                            <button type="button" class="menu-btn text-black-50"><i class="fa fa-share text-secondary"></i> 30 </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="sl-item">
+                <div class="sl-left"><img src="img/favicon.png" alt="user" class="img-circle img-fluid"> </div>
+                <div class="sl-right">
+                    <div>
+                        <a href="profil.html" class="link">Team Vayaterra</a>
+                        <span class="sl-date"> Il y a 55 min</span>
+                        <div class="m-t-20">
+                            <p> Bienvenue sur Vayaterra.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,49 +159,43 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
-    <script src="js/d3.v4.min.js"></script>
     <script>
-        //=============== deferring css ================
-        var loadDeferredStyles = function() {
-            var addStylesNode = document.getElementById("deferred-styles");
-            var replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement)
-            addStylesNode.parentElement.removeChild(addStylesNode);
-        };
-        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        if (raf) raf(function() {
-            window.setTimeout(loadDeferredStyles, 0);
-        });
-        else window.addEventListener('load', loadDeferredStyles);
-        //=============== add service woker ===============
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('./sw.js').then(function(registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+    //=============== deferring css ================
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() {
+        window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+    //=============== add service woker ===============
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
             });
-        }
-        //============= for instalation ==============
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.prompt();
-            deferredPrompt = e;
         });
-        window.addEventListener('appinstalled', (evt) => {
-            app.logEvent('a2hs', 'installed');
-        });
-        //============== custom script =============
-        function showMsg(nom, num) {
-            var msg = nom + num;
-            var row = $(msg);
-            row.toggleClass("d-none");
-        }
+    }
+    //============= for instalation ==============
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.prompt();
+        deferredPrompt = e;
+    });
+    window.addEventListener('appinstalled', (evt) => {
+        app.logEvent('a2hs', 'installed');
+    });
+
     </script>
 </body>
 

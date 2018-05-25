@@ -1,7 +1,7 @@
 <!--
-    Projet Vayaterra / Licence pro DWM
-    version pwa by rivel, nassim, jordan
-    Paris 8 2017-2018
+Projet Vayaterra / Licence pro DWM
+version pwa by rivel, nassim, jordan
+Paris 8 2017-2018
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,77 +9,47 @@
 <head>
     <meta charset="utf-8">
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-    <title>Vayaterra: Profil</title>
+    <title>Profil</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
-    <meta name="theme-color" content="#26a69a">
+    <meta name="theme-color" content="#24292e">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="description" content="Vayaterra pwa">
+    <meta name="author" content="Rivel babindamana">
 
-    <!-- Add Material font (Roboto) and Material icon as needed -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- material css -->
-    <link href="css/material.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
-
-    <link rel="icon" href="icon.webp">
-    <link rel="apple-touch-icon" href="ios-icon.webp">
-    <link rel="apple-touch-startup-image" href="icon.webp">
     <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="ios-icon.png">
+    <link rel="apple-touch-startup-image" href="icon.png">
     <link rel="manifest" href="manifest.json" />
-
-    <!-- blocking css -->
-    <style media="screen">
-        .menu-btn{
-            background-color: transparent;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-        }
-        .menu-btn:hover{
-            cursor: pointer;
-        }
-        .menu-btn:active{
-            border: none;
-            box-shadow: none;
-        }
-        .menu-btn:focus{
-            border: none;
-            box-shadow: none;
-        }
-        .navbar-search{
-            background-color: transparent;
-            border: none;
-            margin: 0 auto;
-            color: #fff;
-        }
-        .navbar-search:hover{
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-secondary">
         <button data-target="#myNavdrawer" data-toggle="navdrawer" type="button" class="menu-btn"> <i class="material-icons">subject</i> </button>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <a class="navbar-search"> &nbsp;&nbsp; <i class="material-icons">search</i> </a>
-        </form>
-        <a class="menu-btn"><i class="material-icons">more_vert</i> </a>
+        <a href="contact.html" class="menu-btn"><i class="material-icons">email</i></a>
+        <div class="dropleft">
+            <button type="button" class="menu-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">translate</i>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Français</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Anglais</a>
+                <a class="dropdown-item" href="#">Chinois</a>
+                <a class="dropdown-item" href="#">Espagnole</a>
+            </div>
+        </div>
     </nav>
     <div aria-hidden="true" class="navdrawer" id="myNavdrawer" tabindex="-1">
         <div class="navdrawer-content">
             <div class="navdrawer-header">
-                <a class="navbar-brand px-0 text-white" href="home.html"><i class="material-icons">keyboard_arrow_left</i> Menu</a>
+                <a class="navbar-brand px-0 text-white" href="actu.html"><i class="material-icons">close</i></a>
             </div>
             <ul class="navdrawer-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.html"><i class="material-icons mr-3">home</i> Accueil</a>
+                    <a class="nav-link" href="actu.html"><i class="material-icons mr-3">home</i> Actualité</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="projet.html"><i class="material-icons mr-3">folder</i> Projet</a>
@@ -106,36 +76,140 @@
                     <a class="nav-link" href="parametre.html"><i class="material-icons mr-3">settings</i> Parametres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html"><i class="fa fa-sign-out mr-3"></i> Deconnexion</a>
+                    <a class="nav-link" href="index.html"><i class="material-icons mr-3">exit_to_app</i> Deconnexion</a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="page-wrap">
-        <div class="container">
-            <h1>Profil page</h1>
+    <div class="container">
+        <ul class="nav nav-justified nav-tabs" id="justifiedTab" role="tablist">
+            <li class="nav-item">
+                <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#consultation" id="home-tab" role="tab"> Profil</a>
+            </li>
+            <li class="nav-item">
+                <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#creation" id="profile-tab" role="tab">Modifier</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="justifiedTabContent">
+            <div aria-labelledby="home-tab" class="tab-pane fade show active" id="consultation" role="tabpanel">
+                <br>
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="img/login-bg.png" alt="Profil image">
+                    <div class="card-body little-profile text-center">
+                        <div class="pro-img">
+                            <img src="img/5.jpg" class="img-fluid" alt="user"/>
+                        </div>
+                        <h5 class="card-title">Jordan Rivel Nassim</h5>
+                        <p class="card-text text-black-50">Voyageur reporteur</p>
+                        <div class="text-center">
+                            <span class="text-secondary"><i class="material-icons">folder</i> 10</span>
+                            <span class="text-secondary"><i class="material-icons">thumb_up</i> 14</span>
+                            <span class="text-secondary"><i class="material-icons">people</i> 8</span>
+                        </div>
+                        <hr>
+                        <div class="">
+                            <span class="badge badge-secondary">Ecologie</span>
+                            <span class="badge badge-success">Voyageur</span>
+                            <span class="badge badge-danger">Reporteur</span>
+                        </div>
+                    </div>
+                    <div><hr></div>
+                    <div class="card-body">
+                        <small class="text-muted">Email </small>
+                        <h6>jrn-contact@gmail.com</h6>
+                        <small class="text-muted">Adresse</small>
+                        <h6>58 Av Stalingrad, 93240 Stains</h6>
+                        <div class="map-box">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.2893003657346!2d2.373959415501415!3d48.9479769792964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66be2ece479b1%3A0xaee4d9fc9ef0c3b4!2s79+Avenue+de+Stalingrad%2C+93240+Stains!5e0!3m2!1sfr!2sfr!4v1527256206374" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div aria-labelledby="profile-tab" class="tab-pane fade" id="creation" role="tabpanel">
+                <div class="projet-creation">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label> Nom </label>
+                                <input type="text" class="form-control" id="nom" placeholder="Nom">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>titre</label>
+                                <input type="text" class="form-control" id="description" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Tag (ex: reporteur, financement...)</label>
+                                <input type="text" class="form-control" id="keyword" placeholder="Mots cles">
+                            </div>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Photo</label>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <button type="submit" class="btn btn-projet">Valider</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
+    <noscript id="deferred-styles">
+        <!-- Add Material font (Roboto) and Material icon as needed -->
+        <link href="css/google-font.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/material-icon.css" rel="stylesheet" media="all" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all" type="text/css">
+        <!-- material css -->
+        <link href="css/material.min.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/style.min.css" rel="stylesheet" media="all" type="text/css">
+    </noscript>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-    <!-- Then Material JavaScript -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
+    <script src="js/d3.v4.min.js"></script>
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+    //=============== deferring css ================
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() {
+        window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+    //=============== add service woker ===============
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
             });
-        }
+        });
+    }
+    //============= for instalation ==============
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.prompt();
+        deferredPrompt = e;
+    });
+    window.addEventListener('appinstalled', (evt) => {
+        app.logEvent('a2hs', 'installed');
+    });
     </script>
 </body>
 
