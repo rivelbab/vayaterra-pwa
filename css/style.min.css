@@ -154,8 +154,8 @@
 
 .logo-accueil {
     display: block;
-    width: 20%;
-    height: 20%;
+    width: 25%;
+    height: 25%;
     margin: auto;
     margin-top: 3%;
 }
@@ -491,4 +491,56 @@ color: grey;
 }
 .card-reponse{
 margin: inherit;
+}
+.custon-file-btn{
+display: inline-block;
+background-color: transparent;
+border: none;
+cursor: pointer;
+}
+.custom-file-btn input[type="file"]{
+display: none;
+}
+.spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: url("../img/spinner.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: .8;
+}
+
+.gallery .error-wrapper {
+	margin: 20px 0;
+}
+
+.gallery .error-wrapper .error {
+	font-style: italic;
+}
+.gallery-container{
+width: 100%;
+}
+.galery{
+width: 100%;
+}
+.gallery .row .gallery-container div{
+display: inline-block;
+width: 50%;
+}
+.input-group input::placeholder{
+color: grey;
+font-size: 0.7rem;
+}
+.msg-textarea textarea::placeholder{
+font-size: 0.8rem;
+}
+.card-home{
+background-color: transparent;
+}
+.home-forme input::placeholder{
+font-size: 0.8rem;
+}
+.home-forme input[type="file"] label{
+font-size: 0.8rem;
 }

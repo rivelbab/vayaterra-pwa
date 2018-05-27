@@ -81,11 +81,34 @@ Paris 8 2017-2018
             </ul>
         </div>
     </div>
-    <div class="container">
+    <div class="container p-1">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title text-center">Messages récents</h4>
-                <hr>
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Vayaterra</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <h5 class="card-title"><a href="contact.html">Messages récents</a></h5>
+                    </div>
+                    <div class="col-3">
+                        <a href="actu.html"><i class="material-icons text-secondary">refresh</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-1">
                 <div class="message-box">
                     <div class="message-widget">
                         <a href="#" onclick="showMsg('#reponse','1')">
@@ -94,13 +117,13 @@ Paris 8 2017-2018
                                 <span class="profile-status online pull-right"></span>
                             </div>
                             <div class="mail-contnet">
-                                <h5>Vanessa Inoubi</h5>
+                                <h5>Nassim</h5>
                                 <span class="mail-desc">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</span>
                                 <span class="time">9:30 AM</span>
                             </div>
                         </a>
                         <!-- ============= start reponse ============-->
-                        <div class="card-reponse d-none" id="reponse1">
+                        <div class="card-reponse p-1 d-none" id="reponse1">
                             <div class="chat-box">
                                 <ul class="chat-list">
                                     <li>
@@ -108,7 +131,7 @@ Paris 8 2017-2018
                                             <img src="img/2.jpg" alt="user" class="img-fluid" />
                                         </div>
                                         <div class="chat-content">
-                                            <h5>Vanessa Inoubi</h5>
+                                            <h5>Nassim</h5>
                                             <div class="box bg-light-info">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</div>
                                         </div>
                                         <div class="chat-time">10:30 am</div>
@@ -124,13 +147,13 @@ Paris 8 2017-2018
                             </div>
                             <br>
                             <div class="b-t">
-                                <form action="contact.html">
+                                <form>
                                     <div class="row">
-                                        <div class="col-8">
-                                            <textarea placeholder="Votre message" class="form-control send-msg"></textarea>
+                                        <div class="col-8 msg-textarea">
+                                            <textarea placeholder=" Votre message" class="form-control send-msg" rows="1" cols="1"></textarea>
                                         </div>
                                         <div class="col-4">
-                                            <button type="submit" class="btn btn-float btn-secondary my-1"><i class="material-icons">send</i></button>
+                                            <button type="button" class="menu-btn my-1" onclick="dialogue('Erreur envoie !!');"><i class="material-icons text-secondary">send</i></button>
                                         </div>
                                     </div>
                                 </form>
@@ -144,8 +167,8 @@ Paris 8 2017-2018
                                 <span class="profile-status online pull-right"></span>
                             </div>
                             <div class="mail-contnet">
-                                <h5>Rivel Babin</h5>
-                                <span class="mail-desc">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</span>
+                                <h5>Rivel</h5>
+                                <span class="mail-desc">Hey guy, comment vas tu?...</span>
                                 <span class="time">10:30 AM</span>
                             </div>
                         </a>
@@ -158,14 +181,14 @@ Paris 8 2017-2018
                                             <img src="img/1.jpg" alt="user" class="img-fluid" />
                                         </div>
                                         <div class="chat-content">
-                                            <h5>Rivel Babin</h5>
-                                            <div class="box bg-light-info">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</div>
+                                            <h5>Rivel</h5>
+                                            <div class="box bg-light-info">Hey guy, comment vas tu? t'as des news de Antoine sur le projet de ramassage ?</div>
                                         </div>
                                         <div class="chat-time">10:30 am</div>
                                     </li>
                                     <li class="odd">
                                         <div class="chat-content">
-                                            <div class="box bg-light-success">Salut oui biensur, êtes vous intéressé ?</div>
+                                            <div class="box bg-light-success">Salut! je penses que c'est pour Novembre</div>
                                             <br/>
                                         </div>
                                         <div class="chat-time">10:58 am</div>
@@ -176,11 +199,11 @@ Paris 8 2017-2018
                             <div class="b-t">
                                 <form action="contact.html">
                                     <div class="row">
-                                        <div class="col-8">
-                                            <textarea placeholder="Votre message" class="form-control send-msg"></textarea>
+                                        <div class="col-8 msg-textarea">
+                                            <textarea placeholder=" Votre message" rows="1" cols="1" class="form-control send-msg"></textarea>
                                         </div>
                                         <div class="col-4">
-                                            <button type="submit" class="btn btn-float btn-secondary my-1"><i class="material-icons">send</i></button>
+                                            <button type="button" class="menu-btn my-1" onclick="dialogue('Erreur envoie !!');"><i class="material-icons text-secondary">send</i></button>
                                         </div>
                                     </div>
                                 </form>
@@ -194,8 +217,8 @@ Paris 8 2017-2018
                                 <span class="profile-status online pull-right"></span>
                             </div>
                             <div class="mail-contnet">
-                                <h5>Jordan Nassim</h5>
-                                <span class="mail-desc">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</span>
+                                <h5>Jordan</h5>
+                                <span class="mail-desc">Salut toi ! ton tournage...</span>
                                 <span class="time">9:30 AM</span>
                             </div>
                         </a>
@@ -208,14 +231,14 @@ Paris 8 2017-2018
                                             <img src="img/5.jpg" alt="user" class="img-fluid" />
                                         </div>
                                         <div class="chat-content">
-                                            <h5>Jordan Nassim</h5>
-                                            <div class="box bg-light-info">Bonjour, Je voudrais savoir si votre annonce concernant le voyage en Amazonie est toujours d'actu</div>
+                                            <h5>Jordan</h5>
+                                            <div class="box bg-light-info">Salut toi ! ton tournage sur la plantation des palmiers c'est pour quand ?</div>
                                         </div>
                                         <div class="chat-time">10:30 am</div>
                                     </li>
                                     <li class="odd">
                                         <div class="chat-content">
-                                            <div class="box bg-light-success">Salut oui biensur, êtes vous intéressé ?</div>
+                                            <div class="box bg-light-success">Je ne sais pas encore, je te tiens au courant</div>
                                             <br/>
                                         </div>
                                         <div class="chat-time">10:58 am</div>
@@ -226,11 +249,11 @@ Paris 8 2017-2018
                             <div class="b-t">
                                 <form action="contact.html">
                                     <div class="row">
-                                        <div class="col-8">
-                                            <textarea placeholder="Votre message" class="form-control send-msg"></textarea>
+                                        <div class="col-8 msg-textarea">
+                                            <textarea placeholder=" Votre message" rows="1" cols="1" class="form-control send-msg"></textarea>
                                         </div>
                                         <div class="col-4">
-                                            <button type="submit" class="btn btn-float btn-secondary my-1"><i class="material-icons">send</i></button>
+                                            <button type="button" class="menu-btn my-1" onclick="dialogue('Erreur envoie !!');"><i class="material-icons text-secondary">send</i></button>
                                         </div>
                                     </div>
                                 </form>
@@ -299,6 +322,10 @@ Paris 8 2017-2018
         var msg = nom+num;
         var row = $(msg);
         row.toggleClass("d-none");
+    }
+    function dialogue(msg){
+        $('.modal-body').text(msg);
+        $('#myModal').modal();
     }
     </script>
 </body>

@@ -81,19 +81,36 @@ Paris 8 2017-2018
             </ul>
         </div>
     </div>
-    <div class="container">
-        <ul class="nav nav-justified nav-tabs" id="justifiedTab" role="tablist">
-            <li class="nav-item">
-                <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#consultation" id="home-tab" role="tab"> Profil</a>
-            </li>
-            <li class="nav-item">
-                <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#creation" id="profile-tab" role="tab">Modifier</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="justifiedTabContent">
-            <div aria-labelledby="home-tab" class="tab-pane fade show active" id="consultation" role="tabpanel">
-                <br>
-                <div class="card">
+    <div class="container p-1">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Vayaterra</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <h5 class="card-title"><a href="profil.html">Profil</a></h5>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="menu-btn" id="update"><i class="material-icons text-secondary">settings</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-1">
+                <!-- ============== profil consultation =============-->
+                <div class="card" id="consultation">
                     <img class="card-img-top img-fluid" src="img/login-bg.png" alt="Profil image">
                     <div class="card-body little-profile text-center">
                         <div class="pro-img">
@@ -124,10 +141,8 @@ Paris 8 2017-2018
                         </div>
                     </div>
                 </div>
-                <br>
-            </div>
-            <div aria-labelledby="profile-tab" class="tab-pane fade" id="creation" role="tabpanel">
-                <div class="projet-creation">
+                <!-- ================== modification ===============-->
+                <div class="projet-creation d-none" id="setting">
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -151,7 +166,7 @@ Paris 8 2017-2018
                         </div>
                         <div class="form-group">
                             <br>
-                            <button type="submit" class="btn btn-projet">Valider</button>
+                            <button type="button" class="btn btn-projet" onclick="dialogue('Profil mise à jour !');">Valider</button>
                         </div>
                     </form>
                 </div>
@@ -169,7 +184,7 @@ Paris 8 2017-2018
         <link href="css/style.min.css" rel="stylesheet" media="all" type="text/css">
     </noscript>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
@@ -209,6 +224,17 @@ Paris 8 2017-2018
     });
     window.addEventListener('appinstalled', (evt) => {
         app.logEvent('a2hs', 'installed');
+    });
+    //================= custom =============
+    function dialogue(msg){
+        $('.modal-body').text(msg);
+        $('#myModal').modal();
+    }
+    $(function(){
+        $('#update').click(function(){
+            $('#consultation').toggleClass("d-none");
+            $('#setting').toggleClass("d-none");
+        });
     });
     </script>
 </body>

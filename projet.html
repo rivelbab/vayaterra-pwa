@@ -81,27 +81,46 @@ Paris 8 2017-2018
             </ul>
         </div>
     </div>
-    <div class="container">
-        <ul class="nav nav-justified nav-tabs" id="justifiedTab" role="tablist">
-            <li class="nav-item">
-                <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#consultation" id="home-tab" role="tab"> Consultation</a>
-            </li>
-            <li class="nav-item">
-                <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#creation" id="profile-tab" role="tab">Création</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="justifiedTabContent">
-            <div aria-labelledby="home-tab" class="tab-pane fade show active" id="consultation" role="tabpanel">
-                <br>
+    <div class="container p-1">
+        <div class="card">
+            <div class="card-header">
                 <div class="row">
+                    <div class="col-12">
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Vayaterra</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <h5 class="card-title"><a href="projet.html">Projets</a></h5>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="menu-btn" id="ajout"><i class="material-icons text-secondary">note_add</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-1">
+                <!-- ================ consultation =============-->
+                <div class="row" id="consultation">
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img-top img-fluid" src="img/03.jpg" alt="Redonner vie aux plantes">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Redonner vie aux plantes</h5>
-                                <p class="card-text">Description du projet... <br><br> </p>
+                            <img class="card-img-top img-fluid" src="img/01.jpg" alt="Ramassage de déchets">
+                            <div class="card-body">
+                                <h5 class="card-title">Ramassage de déchets</h5>
                                 <hr style="width:50%;">
-                                <small class="text-muted">Nassim, aujourd'hui</small>
+                                <p class="card-text">
+                                    Rassembler sur une plage aux Bahamas via Vayaterra, ils décident de nettoyer la plage... <br>
+                                    <small class="text-muted">12 septembre 2017</small>
+                                </p>
                             </div>
                             <div class="card-footer text-center">
                                 <a href="#" class="card-link"> <i class="material-icons">thumb_up</i> </a>
@@ -113,16 +132,16 @@ Paris 8 2017-2018
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="Votre commentaire">
                                         <div class="input-group-append">
-                                            <button class="btn-card-link" type="submit"><i class="material-icons right">send</i> </button>
+                                            <button class="btn-card-link" type="button" onclick="dialogue('Merci pour votre commentaire');"><i class="material-icons right">send</i> </button>
                                         </div>
                                     </div>
                                 </form>
                                 <form class="d-none" action="#" method="post" id="peoplep1">
                                     <hr style="width:50%;">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Rejoint par 3 personnes" readonly>
+                                        <label> Rejoindre ce projet ? </label>
                                         <div class="input-group-append">
-                                            <button class="btn-card-link" type="submit"><i class="material-icons right">person_add</i> </button>
+                                            <button class="btn-card-link" type="button" onclick="dialogue('Bienvenue dans le projet ');"><i class="material-icons right">person_add</i> </button>
                                         </div>
                                     </div>
                                 </form>
@@ -135,12 +154,14 @@ Paris 8 2017-2018
                     </div>
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img-top img-fluid" src="img/02.jpg" alt="Redonner vie aux plantes">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Redonner vie aux plantes</h5>
-                                <p class="card-text">Description du projet... <br><br> </p>
+                            <img class="card-img-top img-fluid" src="img/02.jpg" alt="Sauver la couche d'Ozone">
+                            <div class="card-body">
+                                <h5 class="card-title">Sauver la couche d'Ozone</h5>
                                 <hr style="width:50%;">
-                                <small class="text-muted">Nassim, aujourd'hui</small>
+                                <p class="card-text">
+                                    Un ramassage de déchets a été organisé dans la ville de Paris, afin de reduire le taux de pollution<br>
+                                    <small class="text-muted">15 septembre 2017</small>
+                                </p>
                             </div>
                             <div class="card-footer text-center">
                                 <a href="#" class="card-link"> <i class="material-icons">thumb_up</i> </a>
@@ -152,16 +173,16 @@ Paris 8 2017-2018
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="Votre commentaire">
                                         <div class="input-group-append">
-                                            <button class="btn-card-link" type="submit"><i class="material-icons right">send</i> </button>
+                                            <button class="btn-card-link" type="button" onclick="dialogue('Merci pour votre commentaire');"><i class="material-icons right">send</i> </button>
                                         </div>
                                     </div>
                                 </form>
                                 <form class="d-none" action="#" method="post" id="peoplep2">
                                     <hr style="width:50%;">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Rejoint par 3 personnes" readonly>
+                                        <label> Rejoindre ce projet ? </label>
                                         <div class="input-group-append">
-                                            <button class="btn-card-link" type="submit"><i class="material-icons right">person_add</i> </button>
+                                            <button class="btn-card-link" type="button" onclick="dialogue('Bienvenue dans le projet ');"><i class="material-icons right">person_add</i> </button>
                                         </div>
                                     </div>
                                 </form>
@@ -175,11 +196,13 @@ Paris 8 2017-2018
                     <div class="col-md-4">
                         <div class="card">
                             <img class="card-img-top img-fluid" src="img/03.jpg" alt="Redonner vie aux plantes">
-                            <div class="card-body text-center">
+                            <div class="card-body">
                                 <h5 class="card-title">Redonner vie aux plantes</h5>
-                                <p class="card-text">Description du projet... <br><br> </p>
                                 <hr style="width:50%;">
-                                <small class="text-muted">Nassim, aujourd'hui</small>
+                                <p class="card-text">
+                                    Nous donnons des cours pour apprendre à redonner vie à des plantes qui ont été mal entretenue.<br>
+                                    <small class="text-muted">12 Octobre 2017</small>
+                                </p>
                             </div>
                             <div class="card-footer text-center">
                                 <a href="#" class="card-link"> <i class="material-icons">thumb_up</i> </a>
@@ -191,16 +214,16 @@ Paris 8 2017-2018
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="Votre commentaire">
                                         <div class="input-group-append">
-                                            <button class="btn-card-link" type="submit"><i class="material-icons right">send</i> </button>
+                                            <button class="btn-card-link" type="button" onclick="dialogue('Merci pour votre commentaire');"><i class="material-icons right">send</i> </button>
                                         </div>
                                     </div>
                                 </form>
                                 <form class="d-none" action="#" method="post" id="peoplep3">
                                     <hr style="width:50%;">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Rejoint par 3 personnes" readonly>
+                                        <label> Rejoindre ce projet ? </label>
                                         <div class="input-group-append">
-                                            <button class="btn-card-link" type="submit"><i class="material-icons right">person_add</i> </button>
+                                            <button class="btn-card-link" type="button" onclick="dialogue('Bienvenue dans le projet ');"><i class="material-icons right">person_add</i> </button>
                                         </div>
                                     </div>
                                 </form>
@@ -212,9 +235,8 @@ Paris 8 2017-2018
                         </div>
                     </div>
                 </div>
-            </div>
-            <div aria-labelledby="profile-tab" class="tab-pane fade" id="creation" role="tabpanel">
-                <div class="projet-creation">
+                <!-- ================= creation ==============-->
+                <div class="projet-creation d-none" id="creation">
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -238,14 +260,13 @@ Paris 8 2017-2018
                         </div>
                         <div class="form-group">
                             <br>
-                            <button type="submit" class="btn btn-projet">Creer le projet</button>
+                            <button type="button" class="btn btn-projet" onclick="dialogue('Projet créer avec succèes !!');">Creer le projet</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <noscript id="deferred-styles">
         <!-- Add Material font (Roboto) and Material icon as needed -->
         <link href="css/google-font.css" rel="stylesheet" media="all" type="text/css">
@@ -256,7 +277,7 @@ Paris 8 2017-2018
         <link href="css/style.min.css" rel="stylesheet" media="all" type="text/css">
     </noscript>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
@@ -333,6 +354,16 @@ Paris 8 2017-2018
             row3.addClass("d-none");
         }
     }
+    function dialogue(msg){
+        $('.modal-body').text(msg);
+        $('#myModal').modal();
+    }
+    $(function(){
+        $('#ajout').click(function(){
+            $('#consultation').toggleClass("d-none");
+            $('#creation').toggleClass("d-none");
+        });
+    });
     </script>
 </body>
 

@@ -81,9 +81,81 @@ Paris 8 2017-2018
             </ul>
         </div>
     </div>
-    <div class="container">
-        <br>
-        <h3>Page en construction</h3>
+    <div class="container p-1">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Galerie vayaterra</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Photo ajouter avec succèes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <h5 class="card-title">Galerie</h5>
+                    </div>
+                    <div class="col-3">
+                        <label class="custom-file-btn">
+                            <input type="file" name="photo" accept="image/jpeg,image/x-png">
+                            <i class="material-icons text-secondary">add_a_photo</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-1">
+                <div class="gallery">
+                    <div class="row">
+                        <div class="spinner-wrapper">
+                            <div class="spinner"></div>
+                        </div>
+                        <div class="gallery-container"></div>
+                    </div>
+                </div>
+
+                <!-- Blueimp gallery -->
+                <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                    <div class="slides"></div>
+                    <h3 class="title"></h3>
+                    <a class="prev">‹</a>
+                    <a class="next">›</a>
+                    <a class="close">×</a>
+                    <a class="play-pause"></a>
+                    <ol class="indicator"></ol>
+                    <div class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body next"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left prev">
+                                        <i class="material-icons">arrow_back_ios</i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary next">
+                                        Next
+                                        <i class="material-icons">arrow_forward_ios</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <noscript id="deferred-styles">
@@ -94,12 +166,18 @@ Paris 8 2017-2018
         <!-- material css -->
         <link href="css/material.min.css" rel="stylesheet" media="all" type="text/css">
         <link href="css/style.min.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/blueimp-gallery.min.css" rel="stylesheet" media="all" type="text/css">
+        <link href="css/bootstrap-image-gallery.min.css" rel="stylesheet" media="all" type="text/css">
     </noscript>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/material.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.blueimp-gallery.min.js"></script>
+    <script src="js/bootstrap-image-gallery.min.js"></script>
+    <script src="js/flickr-jquery.js"></script>
     <script>
     //=============== deferring css ================
     var loadDeferredStyles = function() {
@@ -135,6 +213,34 @@ Paris 8 2017-2018
     });
     window.addEventListener('appinstalled', (evt) => {
         app.logEvent('a2hs', 'installed');
+    });
+    //================== custom js ================
+    $(function(){
+        $('.carousel').carousel();
+        $('.carousel-control.prev').click(function() {
+            $('#galerie-carousel').carousel('prev');
+        });
+
+        $('.carousel-control.next').click(function() {
+            $('#galerie-carousel').carousel('next');
+        });
+    });
+    //================ flickr api =================
+    $(function() {
+        // Set blueimp gallery options.
+        $.extend(blueimp.Gallery.prototype.options, {
+            useBootstrapModal: false,
+            hidePageScrollbars: false
+        });
+        // Engage gallery.
+        $('.gallery').flickr({
+            apiKey: 'e1146b5612636a385b211ecc4891014f',
+            photosetId: '72157667387807937'
+        });
+        //================ notification ajout ===========
+        $('input[type="file"]').change(function(){
+            $('#myModal').modal();
+        });
     });
     </script>
 </body>

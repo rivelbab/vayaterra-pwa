@@ -1,7 +1,7 @@
 <!--
-    Projet Vayaterra / Licence pro DWM
-    version pwa by rivel, nassim, jordan
-    Paris 8 2017-2018
+Projet Vayaterra / Licence pro DWM
+version pwa by rivel, nassim, jordan
+Paris 8 2017-2018
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -81,29 +81,73 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <br>
-        <div class="card-deck">
-            <div class="card">
+    <div class="container p-1">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Webdoc vayaterra</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Webdoc ajouter avec succèes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal2">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Commentaire</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Merci pour votre commentaire</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <h5 class="card-title"><a href="webdoc.html">Web documentaire</a> </h5>
+                    </div>
+                    <div class="col-3">
+                        <label class="custom-file-btn">
+                            <input type="file" name="photo" accept="image/jpeg,image/x-png">
+                            <i class="material-icons text-secondary">linked_camera</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-1">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/lsIAL_QdTi0?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Nassim, aujourd'hui</small>
-                    <div class="pull-right">
-                        <a href="#" class="card-link"> <i class="material-icons">thumb_up</i> </a>
-                        <button class="card-link btn-card-link" onclick="showMsg('#commentp', '1')"> <i class="material-icons">comment</i></button>
-                    </div>
-                    <hr>
-                    <form class="d-none" action="#" method="post" id="commentp1">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Votre commentaire">
-                            <div class="input-group-append">
-                                <button class="btn-card-link" type="submit"><i class="material-icons right">send</i> </button>
-                            </div>
-                        </div>
-                    </form>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Nassim, aujourd'hui</small>
+                <div class="pull-right">
+                    <a href="#" class="card-link"> <i class="material-icons">thumb_up</i> </a>
+                    <button class="card-link btn-card-link" onclick="showMsg('#commentp', '1')"> <i class="material-icons">comment</i></button>
                 </div>
+                <hr>
+                <form class="d-none" action="#" method="post" id="commentp1">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Votre commentaire">
+                        <div class="input-group-append">
+                            <button class="btn-card-link" type="button" id="send-btn"><i class="material-icons right">send</i></button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -124,47 +168,53 @@
     <script src="js/material.min.js"></script>
     <script src="js/d3.v4.min.js"></script>
     <script>
-        //=============== deferring css ================
-        var loadDeferredStyles = function() {
-            var addStylesNode = document.getElementById("deferred-styles");
-            var replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement)
-            addStylesNode.parentElement.removeChild(addStylesNode);
-        };
-        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        if (raf) raf(function() {
-            window.setTimeout(loadDeferredStyles, 0);
-        });
-        else window.addEventListener('load', loadDeferredStyles);
-        //=============== add service woker ===============
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('./sw.js').then(function(registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+    //=============== deferring css ================
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() {
+        window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+    //=============== add service woker ===============
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
             });
-        }
-        //============= for instalation ==============
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.prompt();
-            deferredPrompt = e;
         });
-        window.addEventListener('appinstalled', (evt) => {
-            app.logEvent('a2hs', 'installed');
+    }
+    //============= for instalation ==============
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.prompt();
+        deferredPrompt = e;
+    });
+    window.addEventListener('appinstalled', (evt) => {
+        app.logEvent('a2hs', 'installed');
+    });
+    //============== custom script =============
+    function showMsg(nom, num) {
+        var msg = nom + num;
+        var row = $(msg);
+        row.toggleClass("d-none");
+    }
+    $(function(){
+        $('#send-btn').click(function(){
+            $('#myModal2').modal();
+            $('#commentp1').toggleClass('d-none');
         });
-        //============== custom script =============
-        function showMsg(nom, num) {
-            var msg = nom + num;
-            var row = $(msg);
-            row.toggleClass("d-none");
-        }
+    });
     </script>
 </body>
 
